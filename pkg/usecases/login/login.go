@@ -16,6 +16,8 @@ type Input struct {
 
 type OutPut struct {
 	Token string `json:"token"`
+	ID    int32  `json:"id"`
+	Name  string `json:"name"`
 }
 
 func Exec(input Input) (OutPut, error) {
@@ -48,6 +50,8 @@ func Exec(input Input) (OutPut, error) {
 	}
 
 	output.Token = token
+	output.ID = account.ID
+	output.Name = account.Name
 
 	return output, nil
 }
